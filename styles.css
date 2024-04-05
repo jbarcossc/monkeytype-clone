@@ -1,44 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
 :root {
-	color-scheme: light dark;
-	--green: #39e087;
-	--yellow: #dbd94e;
-	--red: #d64646;
-	--black: #272727;
-	--gray: #888;
+  color-scheme: light dark;
+  --green: #2e9a43;
+  --yellow: #bebc3f;
+  --red: #a02d2d;
+  --black: #272727;
+  --gray: #888;
 }
 
 body {
-	background: var(--black);
-	font-family: 'DM Mono', monospace;
-	display: grid;
-	place-content: center;
-	padding: 2rem;
+  background: var(--black);
+  font-family: 'DM Mono', monospace;
+  display: grid;
+  place-content: center;
+  padding: 2rem;
 }
 
-main {
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-	max-width: 32rem;
+section {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 32rem;
 }
 
 time {
-	color: var(--yellow);
+  color: var(--yellow);
 }
 
 input {
-	z-index: -999;
-	position: absolute;
-	top: 0;
-	left: 0;
-	pointer-events: none;
+  z-index: -999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
 p {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.25rem 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin: 0;
+}
+
+m-letter {
+  color: var(--gray);
+  position: relative;
+
+  &.active::before {
+    content: '|';
+    color: var(--yellow);
+    position: absolute;
+    font-size: 0.9rem;
+    left: -70%;
+    animation: 1s blink infinite ease-in-out;
+  }
+
+  &.correct {
+    color: var(--green);
+  }
+
+  &.incorrect {
+    color: var(--red);
+  }
+}
+
+@keyframes blink {
+  0%,
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
 }
