@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+:root {
+	color-scheme: light dark;
+	--green: #39e087;
+	--yellow: #dbd94e;
+	--red: #d64646;
+	--black: #272727;
+	--gray: #888;
+}
+
+body {
+	background: var(--black);
+	font-family: 'DM Mono', monospace;
+	display: grid;
+	place-content: center;
+	padding: 2rem;
+}
+
+main {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	max-width: 32rem;
+}
+
+time {
+	color: var(--yellow);
+}
+
+input {
+	z-index: -999;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+p {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 0.5rem;
+}
